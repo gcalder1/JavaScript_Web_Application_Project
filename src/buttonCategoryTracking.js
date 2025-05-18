@@ -1,5 +1,3 @@
-import { createFetchURL } from "./apiFetch.js";
-
 /*
 Array Of Objects creation: Respective button elements + Created aliases
 */
@@ -21,7 +19,7 @@ let categories = [
 Button functionality: Visual Animation + Category Selection (Adding/Removing
 appropriate classes)
 */
-const setUpButtonClick = () => {
+export const setUpButtonClick = () => {
     categories.forEach(category => {
 
         category.categoryType.addEventListener("mouseover", () => {
@@ -39,26 +37,13 @@ const setUpButtonClick = () => {
                 category.categoryType.classList.remove("categoryButtonIdle");
                 category.categoryType.classList.add("categoryButtonActive");
 
-                console.log(`${category.alias} has been activated.`);
             } else {
                 category.categoryType.classList.add("categoryButtonIdle");
                 category.categoryType.classList.remove("categoryButtonActive");
                 
-                console.log(`${category.alias} has been de-activated.`);
             }
             
-        });
-
-        //Checking for active categories and then generating our URL from that
-        category.categoryType.addEventListener("click", () => {
-
-            let activeCategories = getActiveCategories();
-            console.log(`Updated active categories: ${activeCategories}`);
-
-            let fetchUrl = createFetchURL(activeCategories);
-            console.log(`Updated URL: ${fetchUrl}`);
-            
-
+            console.log(`${category.alias} status updated. Active categories:`, getActiveCategories());
         });
     });
 }
@@ -66,13 +51,10 @@ const setUpButtonClick = () => {
 /*
 Array of active buttons by alias names
 */
-const getActiveCategories = () => {
+export const getActiveCategories = () => {
     let activeCategoryElements = categories.filter(category => category.categoryType.classList.contains("categoryButtonActive"));
     let activeCategoryAlias = activeCategoryElements.map(category => category.alias);
 
     return activeCategoryAlias;
 }
 
-
-//This goes at the end of all of your code. Fill with what you're exporting//
-export { setUpButtonClick, getActiveCategories, categories };

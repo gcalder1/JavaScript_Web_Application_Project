@@ -76,7 +76,9 @@ a {
 
 #currentJoke {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 25px;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
   background-color: aliceblue;

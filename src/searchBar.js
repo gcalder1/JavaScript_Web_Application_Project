@@ -1,4 +1,4 @@
-const searchBarFunctionality = () => {
+export const searchBarFunctionality = () => {
     const searchBarInput = document.getElementById("searchBarInput");
     const searchButton = document.getElementById("searchButton");
 
@@ -11,5 +11,3 @@ const searchBarFunctionality = () => {
         console.log("buttonClicked")
     })
 }
-
-export { searchBarFunctionality };

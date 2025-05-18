@@ -4,51 +4,40 @@ import { getActiveCategories } from "./buttonCategoryTracking.js"
 Dynamic URL creation - Category-based filter for final fetch URL
 */
 
-let createFetchURL = () => {
+export const generateJokeURL = () => {
     let activeCategories = getActiveCategories();
      console.log("These are the currently active categories:", activeCategories);
 
     //We can get a joke anytime we want (with or without categories)
     if (activeCategories.length === 0) {
         const anyJokeCategory = "Pun,Spooky,Christmas,Programming,Miscellaneous";
-        console.log(anyJokeCategory)
-        const filterlessJokeUrl = `https://v2.jokeapi.dev/joke/${anyJokeCategory}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`;
-        console.log(filterlessJokeUrl);
-        return filterlessJokeUrl;
+        return `https://v2.jokeapi.dev/joke/${anyJokeCategory}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`;
     }
 
     //Joining the different aliases by comma for correct end-point format
     const categoryDynamicUrl = activeCategories.join(",");
-
-    const jokeUrl = `https://v2.jokeapi.dev/joke/${categoryDynamicUrl}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`;
-    console.log(jokeUrl);
-
-    return jokeUrl;
-
+    return `https://v2.jokeapi.dev/joke/${categoryDynamicUrl}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`;
+    
 }
 
 
 /*
-Fetch from JokeAPI based on dynamic URL
+Fetch from JokeAPI based on dynamic URL created from categories
 */
 
-fetch(createFetchURL())
-    .then((jokeContentResponse) => {
-        console.log("we got a reponse from jokeAPI");
-        console.log(jokeContentResponse.headers.get("content-type"));
-        return jokeContentResponse.json();
-    })
-    .then((jokeData) => {
-        console.log("joke data is here");
-        console.log(jokeData);
-    })
-    .catch((error) => {
-        console.log("we've got an error", error);
-    })
-    .finally(() => {
-        console.log("now we're showing what we've got to the user...")
-    })
+export const fetchJoke = async () => {
+    try{
+        const url = generateJokeURL();
+        console.log(`We're getting the url from here: ${url}`);
 
+        const jokeResponse = await fetch(url);
+        const apiData = await jokeResponse.json();
 
-//This goes at the end of all of your code//
-export { createFetchURL };
+        console.table(apiData);
+        return apiData;
+    } catch (error) {
+        console.error(`Something went wrong: ${error}`);
+        throw error;
+    }
+
+}
