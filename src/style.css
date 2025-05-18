@@ -75,18 +75,74 @@ a {
 }
 
 #currentJoke {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 25px;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
-  background-color: aliceblue;
-  border: purple solid 2px;
+  background-color: rgb(233, 240, 247);
+  border: rgb(160, 152, 160) solid 2px;
   border-radius: 10px;
 }
 
-#slider {
+#currentJoke::backdrop {
+  background-color: #222;
+  filter: opacity(0.5);
+}
+
+#jokeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+#fetchJokeButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(76, 87, 102);
+  box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #e9e3e3;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#fetchJokeButton:hover {
+  transform: scale(1.1);
+  filter: brightness(110%);
+}
+
+.labelDecorator {
+  font-size: 24px;
+  color: #424245;
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+#closeButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
+  background-color: rgb(76, 87, 102);
+  color: #e9e3e3;
+  transition: 0.2s ease-in-out;
+}
+
+#closeButton:hover {
+  filter: brightness(110%);
+  transform: scale(1.1);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* #slider {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -100,18 +156,17 @@ a {
 
 #sliderRatingNumber {
   font-size: 20px;
-}
+} */
 
 #searchBarButtonContainer {
   display: flex;
   align-items: center;
   max-width: 600px;
-  margin: 20px auto;
-  border: 2px solid #959699;
+  margin: 25px auto;
+  border: 1px solid #959699;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
   border-radius: 10px;
-  overflow: hidden;
-  
+  overflow: hidden;  
 }
 
 #searchBarInput {
@@ -121,7 +176,6 @@ a {
   outline: none;
   font-size: 16px;
   background-color: aliceblue;
-
 }
 
 #searchButton {

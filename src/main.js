@@ -18,9 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
       displayJoke(joke);
 
     } catch (error) {
+      jokeContainer.showModal();
       displayError();
       console.error(`Couldn't get joke: ${error}`);
     }
+  });
+
+  document.getElementById("fetchJokeButton").addEventListener("click", () => {
+
   });
 });
 
@@ -34,12 +39,21 @@ const displayJoke = (jokeData) => {
       jokeContainer.innerHTML = `
       <p><strong class="labelDecorator">Setup:</strong> ${jokeData.setup}</p>
       <p><strong class="labelDecorator">Delivery:</strong> ${jokeData.delivery}</p>
-      <button id="closeButton">
-        Close
-      </button>
+      <div class="close">
+        <button id="closeButton">
+          Close
+        </button>
+      </div>
       `
     } else {
-      jokeContainer.innerHTML = `<p><strong class="labelDecorator>One-liner:</strong> ${jokeData.joke}</p>`
+      jokeContainer.innerHTML = `
+      <p><strong class="labelDecorator">One-liner:</strong> ${jokeData.joke}</p>
+      <div class="close">
+        <button id="closeButton">
+          Close
+        </button>
+      </div>
+      `
     }
 }
 
@@ -48,6 +62,12 @@ const displayError = () => {
     jokeContainer.innerHTML = `
     <p class="errorMessage"><strong>Error:</strong> We were unable to find a joke
     of that category!</p>
+    <div class="close">
+      <button id="closeButton">
+        Close
+      </button>
+    </div>
+
     `
 }
 
