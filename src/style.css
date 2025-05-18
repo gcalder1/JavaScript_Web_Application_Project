@@ -4,8 +4,28 @@
   color: #222;
 }
 
-body {
+html {
   background-color: rgb(106, 187, 160);
+}
+
+.bodyCosmetics {
+  background-color: rgb(106, 187, 160);
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 100vh;
+}
+
+.contentContainer {
+  filter: brightness(100%);
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .contentCentered{
@@ -77,6 +97,7 @@ a {
 #currentJoke {
   align-items: center;
   padding: 25px;
+  width: 500px;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
   background-color: rgb(233, 240, 247);
   border: rgb(160, 152, 160) solid 2px;
@@ -116,6 +137,11 @@ a {
 .labelDecorator {
   font-size: 24px;
   color: #424245;
+}
+
+.errorMessage {
+  font-size: 24px;
+  color: #d12d2d;
 }
 
 .close {

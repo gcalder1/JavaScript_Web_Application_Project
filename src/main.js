@@ -8,31 +8,39 @@ const closeContainer = document.getElementById("closeButton");
 document.addEventListener("DOMContentLoaded", () => {
   setUpButtonClick();
   searchBarFunctionality();
+  
   /*
   Displaying fetched joke depending on fetched joke state
   */
   document.getElementById("fetchJokeButton").addEventListener("click", async () =>{
     try {
-      const joke = await fetchJoke();
+      jokeContainer.innerHTML = `<p>Loading...</p>`
       jokeContainer.showModal();
+
+      const joke = await fetchJoke();
       displayJoke(joke);
 
     } catch (error) {
       jokeContainer.showModal();
-      displayError();
+      displayError(error);
       console.error(`Couldn't get joke: ${error}`);
     }
   });
 
-  document.getElementById("fetchJokeButton").addEventListener("click", () => {
-
+  /*
+  Close dialogue
+  */
+  document.addEventListener("click", (close) => {
+    if (close.target.id == "closeButton") {
+      jokeContainer.close();
+    }
   });
+
 });
 
 /*
 Display functions to be called within respective try/catch handlers
 */
-
 const displayJoke = (jokeData) => {
   const jokeContainer = document.getElementById("currentJoke");
     if (jokeData.type === "twopart") {
@@ -57,11 +65,11 @@ const displayJoke = (jokeData) => {
     }
 }
 
-const displayError = () => {
+const displayError = (error) => {
   const jokeContainer = document.getElementById("currentJoke");
     jokeContainer.innerHTML = `
-    <p class="errorMessage"><strong>Error:</strong> We were unable to find a joke
-    of that category!</p>
+    <p><strong class="errorMessage">Uh Oh!</strong> We were unable to find your
+    joke at this time. ${error}!</p>
     <div class="close">
       <button id="closeButton">
         Close
@@ -71,10 +79,3 @@ const displayError = () => {
     `
 }
 
-/*
-Close dialogue
-*/
-
-closeContainer.addEventListener("click", () => {
-  jokeContainer.close()
-})
