@@ -11,8 +11,12 @@ const saveJoke = (jokeData) => {
         : jokeData.joke
     };
 
+    personalJokeStorage.push(jokeStorageObject);
+    updateJokeTable();
+    
+
     // return jokeStorageObject
-}
+};
 
 // const exampleJoke = {
 //     id: 69420,
@@ -22,3 +26,21 @@ const saveJoke = (jokeData) => {
 // }
 
 // console.log("This what the object looks like", saveJoke(exampleJoke));
+
+const updateJokeTable = () => {
+    const tableBodyUpdate = document.getElementById("bodyJokes")
+    tableBodyUpdate.innerHTML = '';
+
+    personalJokeStorage.forEach(savedJokeData => {
+        const tableRow = document.createElement("tr");
+
+        tableRow.innerHTML = `
+        <td class="tableData">${savedJokeData.content}</td>
+        <td class="tableData">${savedJokeData.category}</td>
+        <td class="tableData">${savedJokeData.id}</td>
+        `
+
+        tableBodyUpdate.appendChild(tableRow);
+    });
+};
+
