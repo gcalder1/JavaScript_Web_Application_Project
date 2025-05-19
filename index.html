@@ -12,29 +12,64 @@
       <span class="introduction">
           <h1>Welcome to The Silly Corner</h1>
           <p>
-          This webpage uses <a href="https://jokeapi.dev/" target="_blank" >JokeAPI</a> 
-          to fetch and display certain categories of SFW jokes. To begin, select
-          the category of joke you want to filter by to receive that joke type. Then
-          click "Give me my joke!" to generate your joke! Similarly, you can search 
-          for your generated joke(s) using the search bar below by looking up your
-          joke category.
+            This webpage uses <a href="https://jokeapi.dev/" target="_blank" >JokeAPI</a> 
+            to fetch and display certain categories of SFW jokes. To begin, enable a
+            filter(s) and generate your joke!
+          </p>
+          <p>
+            Similarly, you can turn on multiple filters and a random joke from those
+            selected categories will be given to you. You may also enable no filters
+            to then receive a completely randomized joke from all the filters provided.
+          </p>
+          <p>
+            If you like one of the joke you previously saw, you can search for the 
+            joke via it's category type from the table list below.
           </p>
           <p>
             ***Disclaimer: ALL jokes provided here are SFW(Safe-For-Work) jokes ONLY***
           </p>
       </span>
-      <div id="chooseJokesCategory">
-          <h3 id="categoriesPrompt">Choose your category:</h3>
-          <div id="categories">
-            <button id="pun" class="categoryButton categoryButtonIdle">A Punny Joke</button>
-            <button id="spooky" class="categoryButton categoryButtonIdle">Spooky Scary Skeletons</button>
-            <button id="christmas" class="categoryButton categoryButtonIdle">Winter and Festive</button>
-            <button id="programming" class="categoryButton categoryButtonIdle">Coding Chaos</button>
-            <button id="misc" class="categoryButton categoryButtonIdle">Other</button>
+      <div id="allJokeContent">
+        <div id="chooseJokesCategory">
+            <h3 id="categoriesPrompt">Choose your category:</h3>
+            <div id="categories">
+              <button id="pun" class="categoryButton categoryButtonIdle">A Punny Joke</button>
+              <button id="spooky" class="categoryButton categoryButtonIdle">Spooky Scary Skeletons</button>
+              <button id="christmas" class="categoryButton categoryButtonIdle">Winter and Festive</button>
+              <button id="programming" class="categoryButton categoryButtonIdle">Coding Chaos</button>
+              <button id="misc" class="categoryButton categoryButtonIdle">Other</button>
+            </div>
+        </div>
+        <div id="jokeButton">
+          <button id="fetchJokeButton">Get me my joke!</button>
+        </div>
+        <div id="jokeLibraryPersonal">
+          <div id="searchBarButtonContainer">
+            <input id="searchBarInput" type="text" placeholder="Look for your joke here..."/>
+            <button id="searchButton">
+              Search
+            </button>
           </div>
-      </div>
-      <div id="jokeButton">
-        <button id="fetchJokeButton">Get me my joke!</button>
+          <div id="savedJokes" class="contentCentered">
+            <table id="jokeTable" class="contentCentered">
+              <thead>
+                <tr>
+                  <th id="jokeTableHeader">Joke</th>
+                  <th id="categoryTableHeader">Category</th>
+                  <th id="quantityTableHeader">Quantity</th>
+                </tr>
+                <tr>
+                  <td>123</td>
+                  <td>123</td>
+                  <td>123</td>
+                </tr>
+              </thead>
+              <tbody id="bodyJokes">
+                <!--Appending jokes here as we gen them-->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
       <dialog id="currentJoke">
         Loading...
@@ -42,40 +77,7 @@
           Close
         </button>
       </dialog>
-      <!-- <div id="currentJoke">
-        Testing appending joke data...
-      </div> -->
-      <!-- <h1 class="contentCentered">Rate this joke you just received</h1>
-      <div id="slider">
-        <input id="sliderRating" class="contentCentered" type="range" min="1" max="5" value="1"/>
-        <p id="sliderRatingNumber" class="contentCentered">4</p>
-      </div> -->
-      <div id="searchBarButtonContainer">
-        <input id="searchBarInput" type="text" placeholder="Look for your joke here..."/>
-        <button id="searchButton">
-          Search
-        </button>
-      </div>
-      <div id="savedJokes" class="contentCentered">
-        <table id="jokeTable" class="contentCentered">
-          <thead>
-            <tr>
-              <th id="jokeTableHeader">Joke</th>
-              <th id="categoryTableHeader">Category</th>
-              <th id="quantityTableHeader">Quantity</th>
-            </tr>
-            <tr>
-              <td>123</td>
-              <td>123</td>
-              <td>123</td>
-            </tr>
-          </thead>
-          <tbody id="bodyJokes">
-            <!--Appending jokes here as we gen them-->
-          </tbody>
-        </table>
-      </div>
-      <script type="module" src="/src/main.js"></script>
     </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

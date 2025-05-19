@@ -5,20 +5,29 @@
 }
 
 html {
-  background-color: rgb(106, 187, 160);
+  background-image: url(/backgroundImage/abstractPurpleskBackground.jpg); /*Credit to: https://negativespace.co | Royalty free/Copyright free images */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
 }
 
 .bodyCosmetics {
-  background-color: rgb(106, 187, 160);
+  background-color: rgba(73, 69, 69, 0.4);
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 0;
   margin-bottom: 0;
   height: 100vh;
+  
 }
 
 .contentContainer {
-  filter: brightness(100%);
+  padding: 0px 15px;
+  height: 100vh;
 }
 
 .introduction {
@@ -26,6 +35,11 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: default;
+}
+
+.introduction p, h1{
+  color: rgb(240, 237, 235);
 }
 
 .contentCentered{
@@ -34,20 +48,23 @@ html {
 }
 
 a {
-  color: rgb(49, 49, 206);
+  color: rgb(62, 62, 191);
+  cursor: pointer !important;
 }
 
 #chooseJokesCategory {
   display: flex;
   justify-content: center;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 10px;
+  padding-right: 10px;
   gap: 10px;
+  overflow: hidden;
   border: red solid 2px;
 }
 
 #categoriesPrompt {
   display: flex;
+  color: rgb(240, 237, 235);
   border: yellow solid 2px;
 }
 
@@ -73,22 +90,36 @@ a {
 }
 
 .categoryButtonHover {
-  background-color: aliceblue;
+  background-color: aliceblue !important;
   filter: none !important;
-  color: #222;
-  transition: 0.2s ease-in-out;
-  transform: scale(1.1);
+  color: #222 !important;
+  box-shadow: 
+  0 0 10px #4f4e4c,
+  0 0 20px #c2c0cb,
+  0 0 5px #222;
+  transition: 0.1s ease-in-out;
+  transform: scale(1.05);
 }
 
 .categoryButtonIdle {
-  filter: brightness(80%);
+  filter: brightness(100%);
+  background-color: rgba(76, 87, 102, 0.4);
+  color: #e9e3e3;
   transition: 0.2s ease-in-out;
 }
 
 .categoryButtonActive {
-  background-color: rgb(76, 87, 102);
+  background-color: rgba(76, 87, 102, 0.9);
   color: #e9e3e3;
-  border: 2px solid #959699;
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+
+.categoryButtonActive:hover {
+  background-color: rgba(76, 87, 102, 0.9) !important;
+  color: #e9e3e3 !important;
+  box-shadow: none !important;
   transition: 0.2s ease-in-out;
   transform: scale(1.1);
   filter: brightness(100%);
@@ -96,11 +127,15 @@ a {
 
 #currentJoke {
   align-items: center;
+  border: none;
   padding: 25px;
   width: 500px;
-  box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
-  background-color: rgb(233, 240, 247);
-  border: rgb(160, 152, 160) solid 2px;
+  box-shadow: 
+  0 0 20px #c6b8a3,
+  0 0 40px #d28a69,
+  0 0 60px #de7979,
+  0 0 80px #9b7edf;
+  background-color: rgba(233, 240, 247, 0.93);
   border-radius: 10px;
 }
 
@@ -113,6 +148,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: green solid 2px;
   padding: 25px;
 }
 
@@ -120,7 +156,7 @@ a {
   padding: 10px 15px;
   border: none;
   border-radius: 10px;
-  background-color: rgb(76, 87, 102);
+  background-color: rgba(76, 87, 102, 0.4);
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
   font-family: sans-serif;
   font-size: 16px;
@@ -131,6 +167,13 @@ a {
 
 #fetchJokeButton:hover {
   transform: scale(1.1);
+  background-color: aliceblue !important;
+  filter: none !important;
+  color: #222 !important;
+  box-shadow: 
+  0 0 10px #4f4e4c,
+  0 0 20px #c2c0cb,
+  0 0 5px #222;
   filter: brightness(110%);
 }
 
@@ -156,7 +199,7 @@ a {
   border: none;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
-  background-color: rgb(76, 87, 102);
+  background-color: rgba(76, 87, 102, 0.4);
   color: #e9e3e3;
   transition: 0.2s ease-in-out;
 }
@@ -165,24 +208,12 @@ a {
   filter: brightness(110%);
   transform: scale(1.1);
   transition: 0.2s ease-in-out;
+  background-color: rgb(76, 87, 102);
+  box-shadow: 
+  0 0 2px rgb(75, 73, 73),
+  0 0 4px #222;
   cursor: pointer;
 }
-
-/* #slider {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border: green 2px solid;
-}
-
-#sliderRating {
-  cursor: pointer;
-  align-items: center;
-}
-
-#sliderRatingNumber {
-  font-size: 20px;
-} */
 
 #searchBarButtonContainer {
   display: flex;
@@ -214,16 +245,76 @@ a {
   transition: 0.2s ease-in-out;
   transform: scale();
   cursor: pointer;
-
 }
 
 #searchButton:hover {
   filter: brightness(120%);
-  transform: scale(1.05);
+  box-shadow: 0 0 5px #222 inset;
+  transform: scale(1.02);
   transition: 0.2s ease-in-out;
 }
 
 table, th, td {
   border: 2px solid #222;
+  padding: 10px;
 }
 
+#jokeLibraryPersonal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: orange 2px solid;
+}
+
+#allJokeContent {
+  display: flex;
+  flex-direction: column;
+  border: purple solid 2px;
+}
+
+@media (max-width: 900px) {
+  #chooseJokesCategory {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .categoryButton {
+    padding: 10px 20px;
+  }
+
+  .bodyCosmetics {
+    margin-left: 0;
+    margin-right: 0;
+    height: calc(100vh - 0px);
+
+  }
+
+  #fetchJokeButton {
+    
+  }
+
+  #jokeLibraryPersonal {
+
+  }
+
+  #allJokeContent {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  
+
+
+
+}
