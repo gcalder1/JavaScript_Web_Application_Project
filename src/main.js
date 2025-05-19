@@ -3,12 +3,11 @@ import { setUpButtonClick } from "./buttonCategoryTracking.js";
 import { searchBarFunctionality } from "./searchBar.js";
 
 const jokeContainer = document.getElementById("currentJoke");
-const closeContainer = document.getElementById("closeButton");
 
 document.addEventListener("DOMContentLoaded", () => {
   setUpButtonClick();
   searchBarFunctionality();
-  
+
   /*
   Displaying fetched joke depending on fetched joke state
   */
@@ -75,7 +74,6 @@ const displayError = (error) => {
         Close
       </button>
     </div>
-
     `
 }
 
