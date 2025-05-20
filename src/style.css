@@ -376,7 +376,6 @@ p {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    box-shadow: 0 0 5px #222 inset;
     border-radius: 10px;
   }
 
@@ -403,6 +402,10 @@ p {
 
   .introduction p {
     display: none;
+  }
+
+  .introduction h1:hover {
+    transform: scale(1.05);
   }
 
   #allJokeContent {
