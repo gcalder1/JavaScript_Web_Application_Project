@@ -11,8 +11,8 @@ export const saveJoke = (jokeData) => {
         type: jokeData.type,
         content: 
         jokeData.type == "twopart" 
-        ? `${jokeData.setup} | ${jokeData.delivery}`
-        : jokeData.joke
+        ? `Set-Up: ${jokeData.setup} | Delivery: ${jokeData.delivery}`
+        : `One-Liner: ${jokeData.joke}`
     };
 
     /*
@@ -38,9 +38,10 @@ export const updateJokeTable = () => {
         const tableRow = document.createElement("tr");
 
         tableRow.innerHTML = `
-        <td class="tableData">${savedJokeData.content}</td>
-        <td class="tableData">${savedJokeData.category}</td>
-        <td class="tableData">${savedJokeData.id}</td>
+        <td class="tableData"><strong class="designator">Joke</strong><p class="tableContent">${savedJokeData.content}</p></td>
+        <td class="tableData"><strong class="designator">Category</strong><p class="tableContent">${savedJokeData.category}</p></td>
+        <td class="tableData"><strong class="designator">ID</strong><p class="tableContent">${savedJokeData.id}</p></td>
+        <div class="diamondSeparator">♦</div>
         `
 
         tableBodyUpdate.appendChild(tableRow);
