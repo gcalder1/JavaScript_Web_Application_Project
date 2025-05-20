@@ -61,6 +61,7 @@ html {
 a {
   color: rgb(62, 62, 191);
   cursor: pointer !important;
+  transition: 0.2s ease-in-out;
 }
 
 a:hover {
