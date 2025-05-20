@@ -56,9 +56,9 @@ This project, on top of it's organization HTML and functionally based JavaScript
     * Document-wide custom orientation of elements to match the user's screensize via media queries
 
 <div style="display: flex; flex-direction: row;">
-    <img src="/projectScreenshots/landscapeTheSillyCorner.png" alt="Landscape - TSC" style="width: 30%; height: auto;"/>
-    <img src="/projectScreenshots/portraitTheSillyCorner.png" alt="Portrait - TSC" style="width: 30%; height: auto;"/>
-    <img src="/projectScreenshots/phoneViewTheSillyCorner.png" alt="Phone View - TSC" style="width: 30%; height: auto;"/>
+    <img src="/projectScreenshots/landscapeTheSillyCorner.png" alt="Landscape - TSC" style="width: 50%; height: auto;"/>
+    <img src="/projectScreenshots/portraitTheSillyCorner.png" alt="Portrait - TSC" style="width: 25%; height: auto;"/>
+    <img src="/projectScreenshots/phoneViewTheSillyCorner.png" alt="Phone View - TSC" style="width: 25%; height: auto;"/>
 </div>
 
 ## Final Thoughts 📝
