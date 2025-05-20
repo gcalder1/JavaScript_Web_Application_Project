@@ -63,6 +63,10 @@ a {
   cursor: pointer !important;
 }
 
+a:hover {
+  filter: invert(100%);
+}
+
 #chooseJokesCategory {
   display: flex;
   justify-content: center;
@@ -74,7 +78,7 @@ a {
 }
 
 #categoriesPrompt {
-  display: flex;
+  display: none;
   color: rgb(240, 237, 235);
   text-shadow: 
   1px 1px 2px #222,
@@ -86,7 +90,7 @@ a {
   display: flex;
   flex: 1;
   flex-shrink: 0;
-  padding: 25px 10px 25px 10px;
+  margin: 25px 10px 25px 10px;
   gap: 30px;  
 }
 
@@ -100,6 +104,7 @@ a {
   border: none;
   outline: none;
   box-shadow: 0 5px 10px rgba(15, 15, 15, 0.1);
+  padding: 10px 15px;
 }
 
 .categoryButtonHover {
@@ -340,6 +345,10 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  #categoriesPrompt {
+    display: flex;
   }
 
   #categories {

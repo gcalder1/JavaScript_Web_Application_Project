@@ -9,7 +9,7 @@ export const searchBarFunctionality = () => {
     const searchButton = document.getElementById("searchButton");
 
     const jokeSearch = () => {
-        searchJokesByCategory(searchBarInput.value);
+        searchJokesByCategory(searchBarInput.value.trim());
     };
 
     searchButton.addEventListener("click", () => jokeSearch());
