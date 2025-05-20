@@ -1,6 +1,7 @@
 import { fetchJoke } from "./apiFetch.js";
 import { setUpButtonClick } from "./buttonCategoryTracking.js";
 import { searchBarFunctionality } from "./searchBar.js";
+import { saveJoke } from "./jokeTableLibrary.js";
 
 const jokeContainer = document.getElementById("currentJoke");
 
@@ -9,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   searchBarFunctionality();
 
   /*
-  Displaying our fetched joke depending on that fetched joke's state
+  Displaying our fetched joke depending on that fetched joke's state (while also saving our fetched joke's
+  data that we need for a joke library)
   */
   document.getElementById("fetchJokeButton").addEventListener("click", async () =>{
     try {
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const joke = await fetchJoke();
       displayJoke(joke);
+      saveJoke(joke);
 
     } catch (error) {
       jokeContainer.showModal();
