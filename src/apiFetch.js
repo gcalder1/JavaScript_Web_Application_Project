@@ -6,7 +6,6 @@ Dynamic URL creation - Category-based filter for final fetch URL
 
 export const generateJokeURL = () => {
     let activeCategories = getActiveCategories();
-     console.log("These are the currently active categories:", activeCategories);
 
     //We can get a joke anytime we want (with or without categories)
     if (activeCategories.length === 0) {
@@ -18,7 +17,7 @@ export const generateJokeURL = () => {
     const categoryDynamicUrl = activeCategories.join(",");
     return `https://v2.jokeapi.dev/joke/${categoryDynamicUrl}?blacklistFlags=nsfw,religious,political,racist,sexist,explicit`;
     
-}
+};
 
 
 /*
@@ -26,9 +25,8 @@ Fetch from JokeAPI based on dynamic URL created from categories
 */
 
 export const fetchJoke = async () => {
-    try{
+    try {
         const url = generateJokeURL();
-        console.log(`We're getting the url from here: ${url}`);
 
         const jokeResponse = await fetch(url);
         if (!jokeResponse.ok) {
@@ -40,7 +38,6 @@ export const fetchJoke = async () => {
             throw new Error("Please provide accurate fields for your search")
         }
 
-        console.table(apiData);
         return apiData;
     } catch (error) {
         if (error instanceof TypeError && error.message.includes("Failed to fetch")) {
@@ -50,6 +47,6 @@ export const fetchJoke = async () => {
         } else {
             throw error;
         }
-    }
+    };
 
-}
+};

@@ -1,13 +1,21 @@
+import { searchJokesByCategory } from "./jokeTableLibrary.js";
+
+/*
+We're tracking what category the user searches for based on the searchBar's input (searching by clicking
+search button or pressing enter)
+*/
 export const searchBarFunctionality = () => {
     const searchBarInput = document.getElementById("searchBarInput");
     const searchButton = document.getElementById("searchButton");
 
-    searchBarInput.addEventListener("input", (typingTracker) => {
-        const inputTyping = typingTracker.target.value;
-        console.log(inputTyping)
-    })
+    const jokeSearch = () => {
+        searchJokesByCategory(searchBarInput.value);
+    };
 
-    searchButton.addEventListener("click", () => {
-        console.log("buttonClicked")
-    })
-}
+    searchButton.addEventListener("click", () => jokeSearch());
+    searchBarInput.addEventListener("keyup", (enter) => {
+        if(enter.key == "Enter") {
+            jokeSearch();
+        };
+    });
+};

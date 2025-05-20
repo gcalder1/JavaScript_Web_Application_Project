@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   searchBarFunctionality();
 
   /*
-  Displaying fetched joke depending on fetched joke state
+  Displaying our fetched joke depending on that fetched joke's state
   */
   document.getElementById("fetchJokeButton").addEventListener("click", async () =>{
     try {
@@ -22,12 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       jokeContainer.showModal();
       displayError(error);
-      console.error(`Couldn't get joke: ${error}`);
     }
   });
 
   /*
-  Close dialogue
+  We are closing our dialogue with our close buttons (targetting the button class of which we're currently on)
   */
   document.addEventListener("click", (close) => {
     if (close.target.id == "closeButton") {
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /*
-Display functions to be called within respective try/catch handlers
+What we should within our dialogue, to be called within respective try/catch handlers
 */
 const displayJoke = (jokeData) => {
   const jokeContainer = document.getElementById("currentJoke");

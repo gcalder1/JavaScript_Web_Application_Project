@@ -1,5 +1,6 @@
 /*
-Array Of Objects creation: Respective button elements + Created aliases
+Our created array of objects based on category button - HTML elements. The array contains aliases that are
+relevant to jokeAPI's JSON data
 */
 const pun = document.getElementById('pun');
 const spooky = document.getElementById('spooky');
@@ -43,13 +44,12 @@ export const setUpButtonClick = () => {
                 
             }
             
-            console.log(`${category.alias} status updated. Active categories:`, getActiveCategories());
         });
     });
 }
 
 /*
-Array of active buttons by alias names
+We're creating an array of all of the category buttons with the active class on it based on their alias
 */
 export const getActiveCategories = () => {
     let activeCategoryElements = categories.filter(category => category.categoryType.classList.contains("categoryButtonActive"));
