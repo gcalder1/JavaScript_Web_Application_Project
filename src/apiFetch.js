@@ -30,7 +30,7 @@ export const fetchJoke = async () => {
 
         const jokeResponse = await fetch(url);
         if (!jokeResponse.ok) {
-            throw new Error("This place does NOT have jokes");
+            throw new Error(`We cannot find what you're looking for. Code: ${jokeResponse.status}`);
         }
 
         const apiData = await jokeResponse.json();
@@ -41,7 +41,7 @@ export const fetchJoke = async () => {
         return apiData;
     } catch (error) {
         if (error instanceof TypeError && error.message.includes("Failed to fetch")) {
-            throw new Error("Your jokes are unable to be found")
+            throw new Error("Network error. Please check your connection")
         } else if (error instanceof TypeError && error.message.includes("Cannot read properties of undefined (reading 'type')!")) {
             throw new Error("Please make sure you have the correct API link")
         } else {
