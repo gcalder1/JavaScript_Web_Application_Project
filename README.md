@@ -4,7 +4,10 @@
 
 This project contains the finalized product for the Web Application Project using a random API. Please check below for more information regarding this project, the repository, and it's contents.
 
-* You may view _The Silly Corner_ [here](https://clever-alpaca-c54b17.netlify.app/) | [![Netlify Status](https://api.netlify.com/api/v1/badges/103ad8ed-a8d5-4ec9-921a-16783126838b/deploy-status)](https://app.netlify.com/projects/clever-alpaca-c54b17/deploys)
+* You may view _The Silly Corner_ [here](https://clever-alpaca-c54b17.netlify.app/)
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/103ad8ed-a8d5-4ec9-921a-16783126838b/deploy-status)](https://app.netlify.com/projects/clever-alpaca-c54b17/deploys)
 
 ## About this repository 🔍
 
