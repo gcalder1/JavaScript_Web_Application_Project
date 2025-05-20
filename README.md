@@ -55,10 +55,10 @@ This project, on top of it's organization HTML and functionally based JavaScript
     * Color transitions 
     * Document-wide custom orientation of elements to match the user's screensize via media queries
 
-<div style="display: flex; flex-direction: row; justify-content: space-between; flex: 1;">
-    <img src="/projectScreenshots/landscapeTheSillyCorner.png" alt="Landscape - TSC">
-    <img src="/projectScreenshots/portraitTheSillyCorner.png" alt="Portrait - TSC">
-    <img src="/projectScreenshots/phoneViewTheSillyCorner.png" alt="Phone View - TSC" >
+<div style="display: flex; flex-direction: row;">
+    <img src="/projectScreenshots/landscapeTheSillyCorner.png" alt="Landscape - TSC" style="width: 30%; height: auto;"/>
+    <img src="/projectScreenshots/portraitTheSillyCorner.png" alt="Portrait - TSC" style="width: 30%; height: auto;"/>
+    <img src="/projectScreenshots/phoneViewTheSillyCorner.png" alt="Phone View - TSC" style="width: 30%; height: auto;"/>
 </div>
 
 ## Final Thoughts 📝
