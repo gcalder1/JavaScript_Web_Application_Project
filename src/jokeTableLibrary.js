@@ -65,12 +65,6 @@ export const searchJokesByCategory = category => {
             row.style.display = ""
         } else {
             row.style.display = "none"
-        }
-    }
-}
-
-/*
-We're creating a read-only replacement for our personalJokeStorage array using spread operator so that we
-can reference this instead of the OG array to avoid accidental changes to main array
-*/
-export const getAllJokes = () => [...personalJokeStorage];
+        };
+    };
+};

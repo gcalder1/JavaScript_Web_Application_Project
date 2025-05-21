@@ -54,7 +54,7 @@ This project, on top of it's organization HTML and functionally based JavaScript
 
 * Many of the elements (including buttons, table display, and even text) are stylized using vanilla CSS to create:
 
-    *  Various visual animations
+    * Various visual animations
     * Color transitions 
     * Document-wide custom orientation of elements to match the user's screensize via media queries
 
